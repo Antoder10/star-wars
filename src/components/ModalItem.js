@@ -39,7 +39,7 @@ const ModalItem = ({show, handleModalClose, item}) => {
                     </p>
                   </ListGroup.Item>
                 )
-              }
+              } else return null;
             })}
           </ListGroup>
         </Modal.Body>
