@@ -8,8 +8,8 @@ import useGetCharacters from '../hooks/useGetCharacter';
 import useGetFilms from '../hooks/useGetFilms';
 
 const App = () => {
-  const [characters, getCharacters] = useGetCharacters();
-  const [films, getFilms] = useGetFilms();
+  const [characters] = useGetCharacters();
+  const [films] = useGetFilms();
 
   return (
     <Container>
