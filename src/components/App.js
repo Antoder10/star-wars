@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <Container>
-        <h1>Star Wars</h1>
+        <h1 className="header">Star Wars</h1>
       <CardsList title="Characters" items={characters}/>
       <CardsList title="Films" items={films} />
     </Container>

@@ -9,7 +9,7 @@ const CardsList = ({title, items}) => {
     <>
       <h3>{title}</h3>
       <CardDeck>
-        <Carousel>
+        <Carousel style={{width: '100vw'}}>
           {items.length !== 0 && items.map(item => {
             return (
               <Carousel.Item>

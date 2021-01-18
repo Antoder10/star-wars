@@ -7,7 +7,18 @@ const ModalItem = ({show, handleModalClose, item}) => {
   for (const [key, value] of Object.entries(item)) {
     newItem.push({key, value});
   }
-  console.log(newItem);
+  const filtered = newItem
+    .filter(item => item.key !== 'created')
+    .filter(item => item.key !== 'edited')
+    .filter(item => item.key !== 'url')
+    .filter(item => item.key !== 'producer')
+    .filter(item => item.key !== 'characters')
+    .filter(item => item.key !== 'planets')
+    .filter(item => item.key !== 'starships')
+    .filter(item => item.key !== 'vehicles')
+    .filter(item => item.key !== 'species')
+    .filter(item => item.key !== 'homeworld')
+    .filter(item => item.key !== 'films')
 
   return (
     <Modal
@@ -19,24 +30,22 @@ const ModalItem = ({show, handleModalClose, item}) => {
         </Modal.Header>
         <Modal.Body>
           <ListGroup variant="flush">
-            {newItem.map(prop => {
-              return (
-                <ListGroup.Item>
-                  {prop.key} : {prop.value}
-                </ListGroup.Item>
-              )
+            {filtered.map(prop => {
+              console.log(prop)
+              if (prop.value !== '' && prop.value.length > 0) {
+                return (
+                  <ListGroup.Item>
+                    <p>
+                      {prop.key.replace('_', ' ').replace(prop.key[0], prop.key[0].toUpperCase())}: <b>{prop.value}</b>
+                    </p>
+                  </ListGroup.Item>
+                )
+              }
             })}
           </ListGroup>
         </Modal.Body>
     </Modal>
   )
 }
-           /* <ListGroup.Item>
-              {`Height: ${height}` || `Title: ${title}`}
-            </ListGroup.Item>
-            <ListGroup.Item>Mass: {mass}</ListGroup.Item>
-            <ListGroup.Item>Birth Year: {birth_year}</ListGroup.Item>
-            <ListGroup.Item>Gender: {gender}</ListGroup.Item>
-            <ListGroup.Item>Homeworld: {homeworld}</ListGroup.Item>*/
 
 export default ModalItem;
