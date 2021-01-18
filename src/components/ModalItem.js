@@ -31,7 +31,6 @@ const ModalItem = ({show, handleModalClose, item}) => {
         <Modal.Body>
           <ListGroup variant="flush">
             {filtered.map(prop => {
-              console.log(prop)
               if (prop.value !== '' && prop.value.length > 0) {
                 return (
                   <ListGroup.Item>
