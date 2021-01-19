@@ -1,47 +1,36 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import ListGroup from 'react-bootstrap/ListGroup';
 
-const ModalItem = ({show, handleModalClose, item}) => {
+import CharacterDetails from './CharacterDetails'
+
+const ModalItem = ({show, handleModalClose, item, image}) => {
   const newItem = [];
   for (const [key, value] of Object.entries(item)) {
     newItem.push({key, value});
   }
   const filtered = newItem
     .filter(item => item.key !== 'created')
+    .filter(item => item.key !== 'id')
     .filter(item => item.key !== 'edited')
     .filter(item => item.key !== 'url')
     .filter(item => item.key !== 'producer')
-    .filter(item => item.key !== 'characters')
-    .filter(item => item.key !== 'planets')
-    .filter(item => item.key !== 'starships')
-    .filter(item => item.key !== 'vehicles')
-    .filter(item => item.key !== 'species')
-    .filter(item => item.key !== 'homeworld')
-    .filter(item => item.key !== 'films')
+    .filter(item => item.key !== 'wiki')
+    .filter(item => item.key !== 'image')
 
-  return (
+    return (
     <Modal
       show={show}
-      dialogClassName="modal-100w"
+      dialogClassName="modal-95vw"
     >
       <Modal.Header closeButton onClick={handleModalClose}>
-          <Modal.Title>Details</Modal.Title>
+          <Modal.Title>
+            <h2>
+              {filtered[0].value}
+            </h2>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ListGroup variant="flush">
-            {filtered.map(prop => {
-              if (prop.value !== '' && prop.value.length > 0) {
-                return (
-                  <ListGroup.Item>
-                    <p>
-                      {prop.key.replace('_', ' ').replace(prop.key[0], prop.key[0].toUpperCase())}: <b>{prop.value}</b>
-                    </p>
-                  </ListGroup.Item>
-                )
-              } else return null;
-            })}
-          </ListGroup>
+          <CharacterDetails filtered={filtered} image={image}/>
         </Modal.Body>
     </Modal>
   )

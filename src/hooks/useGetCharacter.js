@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-import Swapi from '../api/Swapi';
+import Akabab from '../api/Akabab';
 
 const useGetCharacters = () => {
   const [characters, setCharacters] = useState([]);
@@ -10,8 +10,8 @@ const useGetCharacters = () => {
   }, [])
 
   const fetchCharacters = async () => {
-    const response = await Swapi.get('people');
-    setCharacters(response.data.results);
+    const response = await Akabab.get('all.json');
+    setCharacters(response.data);
   }
 
   return [characters, fetchCharacters];

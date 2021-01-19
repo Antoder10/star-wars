@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "Starjedi";
-  src: local("Starjedi"), url(./fonts/Starjedi.ttf) format("truetype");
+  font-family: "SFDistantGalaxy";
+  src: local("SFDistantGalaxy"),
+    url(./fonts/SFDistantGalaxy.ttf) format("truetype");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
@@ -18,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Starjedi;
+  font-family: SFDistantGalaxy;
   margin: 0;
 }
 
@@ -27,11 +28,22 @@ h6 {
   font-size: 5rem;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
-  color: rgb(251, 225, 34);
+  -webkit-text-fill-color: rgb(251, 225, 34);
+  -webkit-text-stroke: 3px black;
 }
 
 h3 {
   font-size: 1.75rem;
   -webkit-text-fill-color: black;
   -webkit-text-stroke: 1px rgb(251, 225, 34);
+}
+
+.modal-95vw {
+  width: 95vw;
+  max-width: 95vw !important;
+}
+
+.list-group-item {
+  border: none;
+  padding: 1.25rem 1.25rem;
 }

@@ -5,17 +5,18 @@ import ModalItem from './ModalItem';
 const CardItem = ({item}) => {
   const [show, setShow] = useState(false);
   const handleModalClose = () => setShow(false);
-  const {name, title} = item;
+  const {name, title, image} = item;
 
   return (
     <>
       <Card
-        style={{ minWidth: '10rem' }}
+        style={{ maxWidth: '25rem' }}
         onClick={() => setShow(true)}
       >
         <Card.Img
           variant="top"
-          src="https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg"
+          src={image || ''}
+          className="img-fluid"
         />
         <Card.Body>
           <Card.Title>{name || title}</Card.Title>
@@ -25,6 +26,7 @@ const CardItem = ({item}) => {
         show={show}
         handleModalClose={handleModalClose}
         item={item}
+        image={image}
       />
     </>
   )
