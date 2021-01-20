@@ -47,3 +47,31 @@ h3 {
   border: none;
   padding: 1.25rem 1.25rem;
 }
+
+.card-title {
+  font-family: SFDistantGalaxy;
+}
+
+.react-multi-carousel-list {
+  margin-bottom: 5rem;
+}
+
+.react-multi-carousel-item {
+  padding-right: 2rem;
+}
+
+.card-img-top {
+  max-height: 50%;
+  object-fit: contain;
+}
+
+.loading-container {
+  text-align: center;
+  height: 100vh;
+}
+
+.h1-loading {
+  font-size: 5rem;
+  color: rgb(251, 225, 34);
+  white-space: pre-line;
+}

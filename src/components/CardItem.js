@@ -12,11 +12,11 @@ const CardItem = ({item}) => {
       <Card
         style={{ maxWidth: '25rem' }}
         onClick={() => setShow(true)}
+        className="h-100"
       >
         <Card.Img
           variant="top"
           src={image || ''}
-          className="img-fluid"
         />
         <Card.Body>
           <Card.Title>{name || title}</Card.Title>
